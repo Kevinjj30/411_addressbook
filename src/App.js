@@ -23,7 +23,7 @@ class App extends React.Component {
     .then(parsedJSON => parsedJSON.results.map(results=> ({ 
       Name: `${results.name.first} ${results.name.last}`,
       Picture: `${results.picture.thumbnail}`,
-      CityandState: `${results.location.city} ${results.location.state}`,
+      CityandState: `${results.location.city} , ${results.location.state}`,
       Address: `${results.location.street.number} ${results.location.street.name}`,
       Email: `${results.email}`,
       Username: `${results.login.username}`,
@@ -49,14 +49,24 @@ render() {
         <div className="results-info">
           {
            
+
             !isLoading && results.length > 0 ? results.map(result => { 
-              const {Name, Picture, Email} = result; 
+              const {Name, Picture, Email, CityandState, Address, Username, Password, DOB, Age, Cell } = result; 
               return <div key={results} title={Name}> {}
                 <li className="Name">{Name}</li>
                <img src={Picture}/>
-               <Toggle>
-               <li className="Email">{Email}</li>
 
+  {/*I discovered this toggle feature in a react youtube video guide and implemented it into my code for this homework. It works well for now at least.... */}
+  
+               <Toggle> 
+               <li className="citystae">Live: {CityandState}</li>
+               <li className="address">Address: {Address}</li>
+               <li className="Email">Email: {Email}</li>
+               <li className="username">Username: {Username}</li>
+               <li className="password">Password: {Password}</li>
+               <li className="DOB">Date of Birth:{DOB}</li>
+               <li className="Age">Age: {Age}</li>
+               <li className="cell">Cellphone:{Cell}</li>
                </Toggle>
                
                <br></br>
