@@ -57,9 +57,9 @@ render() {
                <img src={Picture}/>
 
   {/*I discovered this toggle feature in a react youtube video guide and implemented it into my code for this homework. It works well for now at least.... */}
-  
+
                <Toggle> 
-               <li className="citystae">Live: {CityandState}</li>
+               <li className="citystate">Live: {CityandState}</li>
                <li className="address">Address: {Address}</li>
                <li className="Email">Email: {Email}</li>
                <li className="username">Username: {Username}</li>
@@ -67,7 +67,7 @@ render() {
                <li className="DOB">Date of Birth:{DOB}</li>
                <li className="Age">Age: {Age}</li>
                <li className="cell">Cellphone:{Cell}</li>
-               </Toggle>
+            </Toggle>
                
                <br></br>
                 </div>
